@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  cursor: pointer;
 }
 
 .nav-section{
@@ -9,22 +10,44 @@
   justify-content: center;
 }
 
+.menu-area{
+  display: flex;
+  justify-content: center;
+}
+
 .menu-list{
   display: flex;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu-list li{
   padding: 10px;
 }
 
-.menu-area{
+.search-box{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .search-input{
   background: none;
   border: 0;
   border-bottom: 1px solid ;
+  outline: none;
+}
+
+.image-container {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-container img {
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
 }

@@ -1,12 +1,24 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
+import { Navigate, useNavigate } from 'react-router-dom'
 
-const ProductCard = () => {
+const ProductCard = ({item}) => {
+  const navigate = useNavigate()
+  const showDetail=()=>{
+    navigate(`/product/${item.id}`)
+  }
   return (
     <div>
-        <img src='https://lp2.hm.com/hmgoepprod?set=source[/e0/ee/e0ee7117a23f0accd4d56f09be2bc8e392df2228.jpg],origin[dam],category[men_shirts_longsleeved],type[DESCRIPTIVESTILLLIFE],res[y],hmver[2]&call=url[file:/product/main]' />
-        <div>Conscious choice</div>
-        <div>벨티드 트월 코트</div>
-        <div>$90</div>
+        <Card className='product-card' onClick={showDetail}>
+          <div className='image-container'> 
+            <Card.Img variant='top' src={item?.img} alt={item.title} style={{width: '100%'}} />
+          </div>
+        </Card>
+        {/* <img src={item?.img} alt={item.title} style={{width: '100%'}} /> */}
+        <div>{item?.choice == true ? "Conscious choice" : ""}</div>
+        <div>{item?.title}</div>
+        <div>₩{item?.price}</div>
+        <div>{item?.new == true? "신제품": ""}</div>
     </div>
   )
 }

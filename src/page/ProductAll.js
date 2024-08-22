@@ -6,10 +6,15 @@ const ProductAll = () => {
     const [productList, setProductList] = useState([]);
     const getProducts=async()=>{
 
-        let url = `http://localhost:5000/products`
-        let response = await fetch(url)
+        let url = `https://api.jsonbin.io/v3/b/66c742b0acd3cb34a877fba3`
+        let response = await fetch(url, {
+          headers: {
+            'X-Master-Key' : '$2a$10$.NQn18npIx.hA1LeXR5KluhzNRuyfnkmuzsdZuNlVn2DpbpcdG/IK'
+          }
+        })
         let data = await response.json();
-        setProductList(data);
+        console.log("data ===>", data)
+        setProductList(data.record.products);
     }
     useEffect(()=>{
         getProducts()

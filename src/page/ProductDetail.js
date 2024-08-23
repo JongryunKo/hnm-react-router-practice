@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null)
   const [selectSize, setSelectSize] = useState('사이즈 선택');
   const getProductDetail = async () => {
-    let url = `https://my-json-server.typicode.com/JongryunKo/jr-hnm/products/${id}`
+    let url = `https://my-json-server.typicode.com/JongryunKo/hnm-react-router-practice/products/${id}`
     let response = await fetch(url)
     let data = await response.json()
     console.log('ProductDetail Data===>', data)

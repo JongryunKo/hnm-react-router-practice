@@ -9,7 +9,7 @@ const ProductAll = () => {
   const getProducts = async () => {
     let sesarchQuery = query.get('q') || "";
     //let url = `https://api.jsonbin.io/v3/b/66c742b0acd3cb34a877fba3`
-    let url = `https://my-json-server.typicode.com/JongryunKo/jr-hnm/products?q=${sesarchQuery}`
+    let url = `https://my-json-server.typicode.com/JongryunKo/hnm-react-router-practice/products?q=${sesarchQuery}`
     let response = await fetch(url)
     // let response = await fetch(url, {
     //   headers: {

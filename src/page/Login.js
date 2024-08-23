@@ -1,4 +1,3 @@
-import { width } from '@fortawesome/free-regular-svg-icons/faAddressBook'
 import React from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'

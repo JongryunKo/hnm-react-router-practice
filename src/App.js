@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
-import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
@@ -21,13 +19,13 @@ import PrivateRoute from './route/PrivateRoute';
 // 8. 로그인을 하면 로그아웃이 보이고 로그아웃을 하면 로그인이 보인다.
 // 9. 상품을 검색할 수 있다.
 function App() {
-  const [authenticate, setAuthenticate] = useState(false);
+  let [authenticate, setAuthenticate] = useState(false);
   useEffect(() =>{
-    console.log('authenticate' , authenticate);
+    console.log('authenticate===>' , authenticate);
   })
   return (
     <div>
-      <Navbar/>
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
       <Routes>
         <Route path='/' element={<ProductAll></ProductAll>}></Route>
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate}></Login>}></Route>
